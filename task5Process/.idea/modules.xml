@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../parallels/Task5_Yolo/.idea/Task5_Yolo.iml" filepath="$PROJECT_DIR$/../../../parallels/Task5_Yolo/.idea/Task5_Yolo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../concurrency_theory/task5/.idea/task5.iml" filepath="$PROJECT_DIR$/../../../concurrency_theory/task5/.idea/task5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/task5Process.iml" filepath="$PROJECT_DIR$/.idea/task5Process.iml" />
+    </modules>
+  </component>
+</project>
