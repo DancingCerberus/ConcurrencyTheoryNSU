@@ -150,11 +150,11 @@ if __name__ == "__main__":
     logger.info("Starting Window Image...")
     window_image = WindowImage(framerate)
     logger.info("Starting Frame Assembly...")
-    image_processor = ImageHandler(sensor_x_queues, sensor_cam_queue)
+    image_handler = ImageHandler(sensor_x_queues, sensor_cam_queue)
 
     try:
         while True:
-            window_image.show(image_processor.get())
+            window_image.show(image_handler.get())
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 raise KeyboardInterrupt
     except KeyboardInterrupt:
