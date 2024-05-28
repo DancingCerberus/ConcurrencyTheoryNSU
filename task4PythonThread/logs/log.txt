@@ -37,3 +37,16 @@
 22-05-24 09:50:17 - __main__ - INFO - Camera released
 22-05-24 09:50:17 - __main__ - INFO - Shutdown complete
 22-05-24 09:50:17 - __main__ - INFO - Window destroyed
+28-05-24 08:39:59 - __main__ - INFO - Starting program...
+28-05-24 08:39:59 - __main__ - INFO - Parsing arguments
+28-05-24 08:39:59 - __main__ - INFO - Arguments parsed successfully
+28-05-24 08:39:59 - __main__ - INFO - Starting thread 0
+28-05-24 08:39:59 - __main__ - INFO - Starting thread 1
+28-05-24 08:39:59 - __main__ - INFO - Starting thread 2
+28-05-24 08:39:59 - __main__ - INFO - Starting Sensor Cam thread...
+28-05-24 08:39:59 - __main__ - INFO - Starting Window Image...
+28-05-24 08:39:59 - __main__ - INFO - Starting Frame Assembly...
+28-05-24 08:40:04 - __main__ - INFO - Keyboard Interrupt detected, shutting down...
+28-05-24 08:40:04 - __main__ - INFO - Camera released
+28-05-24 08:40:05 - __main__ - INFO - Shutdown complete
+28-05-24 08:40:05 - __main__ - INFO - Window destroyed
