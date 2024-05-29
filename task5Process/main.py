@@ -1,8 +1,7 @@
 from argparse import ArgumentParser
-from queue import Queue
+from queue import Queue, Empty
 from threading import Event, Thread
-from time import time, sleep
-
+from time import time
 import cv2
 from ultralytics import YOLO
 
@@ -20,7 +19,6 @@ class VideoProcessor:
         self.writer = cv2.VideoWriter(output_file, fourcc, self.fps, (self.frame_width, self.frame_height))
 
         self.stop_event = Event()
-
         self.task_queue = Queue()
         self.result_by_index = {}
         self.threads = [
@@ -51,8 +49,7 @@ class VideoProcessor:
             self.task_queue.put((frame, counter))
             counter += 1
 
-        while not self.task_queue.empty():
-            sleep(0.01)
+        self.task_queue.join()
 
         self.stop_event.set()
 
@@ -67,14 +64,14 @@ class VideoProcessor:
     def worker(self):
         model = YOLO('yolov8s-pose.pt')
 
-        while not self.stop_event.is_set():
-            if self.task_queue.empty():
-                sleep(0.01)
+        while not self.stop_event.is_set() or not self.task_queue.empty():
+            try:
+                frame, index = self.task_queue.get(timeout=0.1)
+            except Empty:
                 continue
-
-            (frame, index) = self.task_queue.get()
             annotated_frame = model.predict(frame, verbose=False, device='cpu')[0].plot()
             self.result_by_index[index] = annotated_frame
+            self.task_queue.task_done()
 
 
 def parse_args():
