@@ -64,7 +64,7 @@ class VideoProcessor:
     def worker(self):
         model = YOLO('yolov8s-pose.pt')
 
-        while not self.stop_event.is_set() or not self.task_queue.empty():
+        while not self.stop_event.is_set():
             try:
                 frame, index = self.task_queue.get(timeout=0.1)
             except Empty:
